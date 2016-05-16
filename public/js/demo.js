@@ -54,7 +54,7 @@ $(document).ready(function () {
     }
 
     $.post('/conversation', params)
-      .done(function onSucess(dialog) {
+      .done(function onSuccess(dialog) {
         $chatInput.val(''); // clear the text input
 
         $jsonPanel.html(JSON.stringify(dialog.conversation, null, 2));
