@@ -18,6 +18,7 @@
 
 var express  = require('express'),
   app        = express(),
+  cors = require('cors'),
   fs         = require('fs'),
   path       = require('path'),
   bluemix    = require('./config/bluemix'),
@@ -26,7 +27,7 @@ var express  = require('express'),
 
 // Bootstrap application settings
 require('./config/express')(app);
-
+app.use(cors());
 // if bluemix credentials exists, then override local
 var credentials =  extend({
   url: '<url>',
