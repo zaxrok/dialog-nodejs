@@ -5,9 +5,10 @@ declared-services:
 applications:
 - services:
   - dialog-service
-  name: dialog-nodejs
+  name: dialog-nodejs-bcc
   command: node app.js
   path: .
   memory: 512M
   env:
     NODE_ENV: production
+  host: dialog-nodejs-bcc
