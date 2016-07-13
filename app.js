@@ -53,8 +53,8 @@ var dialog_id = process.env.DIALOG_ID || dialog_id_in_json || '<missing-dialog-i
 var dialog = watson.dialog(credentials);
 
 app.post('/conversation', function(req, res, next) {
-  var params = extend({ dialog_id: dialog_id }, req.body);
-  dialog.conversation(params, function(err, results) {
+  //var params = extend({ dialog_id: dialog_id }, req.body);
+  dialog.conversation(req.body, function(err, results) {
     if (err)
       return next(err);
     else
@@ -63,8 +63,8 @@ app.post('/conversation', function(req, res, next) {
 });
 
 app.post('/profile', function(req, res, next) {
-  var params = extend({ dialog_id: dialog_id }, req.body);
-  dialog.getProfile(params, function(err, results) {
+  //var params = extend({ dialog_id: dialog_id }, req.body);
+  dialog.getProfile(req.body, function(err, results) {
     if (err)
       return next(err);
     else
